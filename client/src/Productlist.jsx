@@ -12,7 +12,7 @@ const ProductList = () => {
 
     const fetchProducts = async () => {
         try {
-            const result = await axios.get("http://localhost:5009/products", { withCredentials: true });
+            const result = await axios.get("https://crud-operations-udfx.onrender.com/products", { withCredentials: true });
             setProducts(result.data);
         } catch (error) {
             console.error("Error fetching products:", error);
@@ -21,7 +21,7 @@ const ProductList = () => {
 
     const deleteProduct = async (id) => {
         try {
-            await axios.delete(`http://localhost:5009/products/${id}`, { withCredentials: true });
+            await axios.delete(`http://https://crud-operations-udfx.onrender.com/products/${id}`, { withCredentials: true });
             fetchProducts();
         } catch (error) {
             console.error("Error deleting product:", error);
@@ -31,7 +31,7 @@ const ProductList = () => {
     const searchHandle = async () => {
         if (searchKey) {
             try {
-                const result = await axios.get(`http://localhost:5009/search/${searchKey}`, { withCredentials: true });
+                const result = await axios.get(`https://crud-operations-udfx.onrender.com/search/${searchKey}`, { withCredentials: true });
                 setProducts(result.data.data);
             } catch (error) {
                 console.error("Error searching products:", error);
