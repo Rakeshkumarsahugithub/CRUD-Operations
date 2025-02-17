@@ -6,6 +6,8 @@ yarn-error.log
 
 # Environment files
 .env
+# .gitignore
+node_modules/
 
 # OS-specific files
 .DS_Store
