@@ -39,7 +39,7 @@ const Navbar = () => {
     // Handle logout
     const logout = async () => {
         try {
-            await axios.post("http://localhost:5006/auth/logout", {}, { withCredentials: true });
+            await axios.post("http://localhost:5009/auth/logout", {}, { withCredentials: true });
             setIsLoggedIn(false);
             setDropdownVisible(false);
             navigate("/login");  // Redirect to login page
