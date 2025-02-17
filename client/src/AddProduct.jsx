@@ -114,7 +114,7 @@ const AddProduct = () => {
         setLoading(true);
         try {
             await axios.post(
-                "http://localhost:5009/products",
+                "https://crud-operations-udfx.onrender.com/products",
                 { name, price, category, company },
                 { withCredentials: true }
             );
