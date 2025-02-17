@@ -27,7 +27,7 @@ const SignUp = () => {
 
     try {
       const result = await axios.post(
-        "http://https://crud-operations-udfx.onrender.com/auth/signup",
+        "https://crud-operations-udfx.onrender.com/auth/signup",
         { name, email, password, confirmPassword },
         { withCredentials: true }
       );
