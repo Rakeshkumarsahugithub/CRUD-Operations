@@ -435,7 +435,7 @@ import MongoStore from "connect-mongo";  // MongoDB store for sessions
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5009;
-
+const MongoStore = require('connect-mongo');
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
