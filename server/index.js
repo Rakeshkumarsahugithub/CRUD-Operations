@@ -688,3 +688,6 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+// git add .
+// git commit -m "Reinstall dependencies and remove node_modules"
+// git push
