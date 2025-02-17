@@ -453,15 +453,29 @@ const sessionStore = MongoStore.create({
   collectionName: "sessions",
 });
 
+// app.use(
+//   session({
+//     secret: process.env.SESSION_SECRET, // Set a session secret (should be in env)
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: process.env.NODE_ENV === "production", httpOnly: true },
+//     store: sessionStore, // Store sessions in MongoDB
+//   })
+// );
 app.use(
   session({
     secret: process.env.SESSION_SECRET, // Set a session secret (should be in env)
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: process.env.NODE_ENV === "production", httpOnly: true },
+    cookie: {
+      secure: process.env.NODE_ENV === "production", // Use secure cookie in production (HTTPS)
+      httpOnly: true,
+      maxAge: 1000 * 60 * 60 * 24, // 1 day session timeout
+    },
     store: sessionStore, // Store sessions in MongoDB
   })
 );
+
 
 // Database Connection
 connectDB().catch((err) => {
