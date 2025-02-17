@@ -430,12 +430,12 @@ import connectDB from "./config.js";
 import User from "./User.js";
 import Product from "./Products.js";
 import session from "express-session";
-  // MongoDB store for sessions
+import MongoStore from "connect-mongo";  // MongoDB store for sessions
 
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5009;
-const MongoStore = require('connect-mongo');
+
 // Middleware
 app.use(express.json());
 app.use(cookieParser());
@@ -690,5 +690,5 @@ app.listen(PORT, () => {
 
 // git add .
 // git commit -m "Reinstall dependencies and remove node_modules"
-// git push
+// git push 
 
