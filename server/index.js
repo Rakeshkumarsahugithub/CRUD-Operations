@@ -449,6 +449,12 @@ app.use(
 );
 app.options("*", cors());
 
+// Handle Cache-Control for all responses (optional)
+app.use((req, res, next) => {
+  res.header("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+  next();
+});
+
 // Session Store (MongoDB for persistence)
 const sessionStore = MongoStore.create({
   mongoUrl: process.env.MONGODB_URI, // Your MongoDB URI
