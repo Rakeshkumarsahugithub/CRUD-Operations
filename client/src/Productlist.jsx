@@ -1,3 +1,111 @@
+// import React, { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+// import axios from "axios";
+
+// const ProductList = () => {
+//     const [products, setProducts] = useState([]);
+//     const [searchKey, setSearchKey] = useState("");
+
+//     useEffect(() => {
+//         fetchProducts();
+//     }, []);
+
+//     const fetchProducts = async () => {
+//         try {
+//             const result = await axios.get("https://crud-operations-udfx.onrender.com/products", { withCredentials: true });
+//             setProducts(result.data);
+//         } catch (error) {
+//             console.error("Error fetching products:", error);
+//         }
+//     };
+
+//     const deleteProduct = async (id) => {
+//         try {
+//             await axios.delete(`http://https://crud-operations-udfx.onrender.com/products/${id}`, { withCredentials: true });
+//             fetchProducts();
+//         } catch (error) {
+//             console.error("Error deleting product:", error);
+//         }
+//     };
+
+//     const searchHandle = async () => {
+//         if (searchKey) {
+//             try {
+//                 const result = await axios.get(`https://crud-operations-udfx.onrender.com/search/${searchKey}`, { withCredentials: true });
+//                 setProducts(result.data.data);
+//             } catch (error) {
+//                 console.error("Error searching products:", error);
+//             }
+//         } else {
+//             fetchProducts(); // Load all products if search key is empty
+//         }
+//     };
+
+//     return (
+//         <div className="container mt-5">
+//             <h1>Product List</h1>
+//             <div className="d-flex mb-3">
+//                 <input
+//                     type="text"
+//                     className="form-control"
+//                     placeholder="Search Product"
+//                     value={searchKey}
+//                     onChange={(e) => setSearchKey(e.target.value)}
+//                 />
+//                 <button className="btn btn-primary ms-2" onClick={searchHandle}>Search</button>
+//             </div>
+
+//             <table className="table table-bordered">
+//                 <thead>
+//                     <tr>
+//                         <th>Serial No</th>
+//                         <th>Name</th>
+//                         <th>Price</th>
+//                         <th>Category</th>
+//                         <th>Company</th>
+//                         <th>Operation</th>
+//                     </tr>
+//                 </thead>
+//                 <tbody>
+//                     {products.length > 0 ? (
+//                         products.map((product, index) => (
+//                             <tr key={product._id}>
+//                                 <td>{index + 1}</td>
+//                                 <td>{product.name}</td>
+//                                 <td>{product.price}</td>
+//                                 <td>{product.category}</td>
+//                                 <td>{product.company}</td>
+//                                 <td>
+//                                     <button
+//                                         className="btn me-2"
+//                                         onClick={() => deleteProduct(product._id)}
+//                                         style={{ backgroundColor: 'red', color: 'white' }}
+//                                         onMouseEnter={(e) => e.target.style.backgroundColor = 'maroon'} // Change to maroon on hover
+//                                         onMouseLeave={(e) => e.target.style.backgroundColor = 'red'} // Revert back to red when hover ends
+//                                        > Delete
+//                                     </button>
+
+//                                     <Link to={`/Update/${product._id}`} className="btn btn-warning">Update</Link>
+//                                 </td>
+//                             </tr>
+//                         ))
+//                     ) : (
+//                         <tr>
+//                             <td colSpan="6" className="text-center">No Result Found!</td>
+//                         </tr>
+//                     )}
+//                 </tbody>
+//             </table>
+//         </div>
+//     );
+// };
+
+// export default ProductList;
+
+
+
+
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -12,7 +120,7 @@ const ProductList = () => {
 
     const fetchProducts = async () => {
         try {
-            const result = await axios.get("https://crud-operations-udfx.onrender.com/products", { withCredentials: true });
+            const result = await axios.get("https://crud-operations-eight-delta.vercel.app/products", { withCredentials: true });
             setProducts(result.data);
         } catch (error) {
             console.error("Error fetching products:", error);
@@ -21,7 +129,7 @@ const ProductList = () => {
 
     const deleteProduct = async (id) => {
         try {
-            await axios.delete(`http://https://crud-operations-udfx.onrender.com/products/${id}`, { withCredentials: true });
+            await axios.delete(`https://crud-operations-eight-delta.vercel.app/products/${id}`, { withCredentials: true });
             fetchProducts();
         } catch (error) {
             console.error("Error deleting product:", error);
@@ -31,7 +139,7 @@ const ProductList = () => {
     const searchHandle = async () => {
         if (searchKey) {
             try {
-                const result = await axios.get(`https://crud-operations-udfx.onrender.com/search/${searchKey}`, { withCredentials: true });
+                const result = await axios.get(`https://crud-operations-eight-delta.vercel.app/search/${searchKey}`, { withCredentials: true });
                 setProducts(result.data.data);
             } catch (error) {
                 console.error("Error searching products:", error);
