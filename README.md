@@ -16,6 +16,8 @@ A **MERN application** that provides user authentication and CRUD operations on 
 - **Session Management** using MongoDB to persist sessions 💾
 - **Product Management** (Create, Read, Update, Delete) for users 🛠️
 - **Search functionality** for products based on name, category, or company 🔍
+- **Responsive Design**: Suitable for mobile, tablet, and desktop views :iphone:.
+
 
 ---
 
