@@ -1,6 +1,6 @@
 # CRUD Operations API with Authentication
- 
-`![image signup](https://raw.githubusercontent.com/Rakeshkumarsahugithub/CRUD-Operations/client/src/assets/Screenshot signup.png)`
+ ![Image](https://github.com/user-attachments/assets/cd9f19ec-3c1c-4d3a-822e-2d64d4eba2db)
+
 
 A **MERN application** that provides user authentication and CRUD operations on products using MongoDB.
 
