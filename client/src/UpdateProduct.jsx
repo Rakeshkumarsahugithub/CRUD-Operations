@@ -27,12 +27,11 @@ const UpdateProduct = () => {
     }, [id]);
 
     //The fetchProductDetails function is triggered whenever the component mounts or the id changes.
-
+ // const response = await axios.get(`https://crud-operations-udfx.onrender.com/products/${id}`, { withCredentials: true });
     // Function to fetch product details
     const fetchProductDetails = async () => {
         setLoading(true);
-        try {
-            // const response = await axios.get(`https://crud-operations-udfx.onrender.com/products/${id}`, { withCredentials: true });
+        try { 
             const response = await axios.get(`https://crud-operations-eight-delta.vercel.app/products/${id}`, { withCredentials: true });
             if (response.data) {
                 const { name, price, category, company } = response.data;
@@ -76,7 +75,7 @@ const UpdateProduct = () => {
         try {
             const response = await axios.put(
                 // `https://crud-operations-udfx.onrender.com/products/${id}`,
-                 `https://crud-operations-eight-delta.vercel.app/products/${id}`
+                 `https://crud-operations-eight-delta.vercel.app/products/${id}`,
                 { name, price: parseFloat(price), category, company },
                 // { withCredentials: true }
                 { headers: { withCredentials: true } }
