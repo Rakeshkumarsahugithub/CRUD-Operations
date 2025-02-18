@@ -123,35 +123,71 @@ const SignUp = () => {
     return passwordRegex.test(password);
   };
 
-  const collectData = async () => {
-    if (!validatePassword(password)) {
-      alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
-      return;
-    }
+  // const collectData = async () => {
+  //   if (!validatePassword(password)) {
+  //     alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+  //     return;
+  //   }
 
-    if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      return;
-    }
+  //   if (password !== confirmPassword) {
+  //     alert("Passwords do not match.");
+  //     return;
+  //   }
 
-    try {
-      const result = await axios.post(
-        "https://crud-operations-eight-delta.vercel.app/auth/signup",
-        { name, email, password, confirmPassword },
-        { withCredentials: true }
-      );
+  //   try {
+  //     const result = await axios.post(
+  //       "https://crud-operations-eight-delta.vercel.app/auth/signup",
+  //       { name, email, password, confirmPassword },
+  //       // { withCredentials: true }
+  //           credentials: "include", // Important to send cookies with fetch
+  //     );
       
-      alert(result.data.message);
-      setName("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
-      navigate("/login");
-    } catch (error) {
-      console.error("Error during signup:", error.response || error);
-      alert(error.response?.data?.message || "Signup failed. Please try again.");
-    }
-  };
+  //     alert(result.data.message);
+  //     setName("");
+  //     setEmail("");
+  //     setPassword("");
+  //     setConfirmPassword("");
+  //     navigate("/login");
+  //   } catch (error) {
+  //     console.error("Error during signup:", error.response || error);
+  //     alert(error.response?.data?.message || "Signup failed. Please try again.");
+  //   }
+  // };
+
+      const collectData = async () => {
+  if (!validatePassword(password)) {
+    alert("Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
+
+  try {
+    const response = await fetch("https://crud-operations-eight-delta.vercel.app/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, email, password, confirmPassword }),
+      credentials: "include", // Important to send cookies with fetch
+    });
+
+    const result = await response.json();
+    alert(result.message);
+    setName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    navigate("/login");
+  } catch (error) {
+    console.error("Error during signup:", error);
+    alert("Signup failed. Please try again.");
+  }
+};
+
 
   return (
     <div className="container mt-5">
