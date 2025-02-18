@@ -32,7 +32,7 @@ const UpdateProduct = () => {
     const fetchProductDetails = async () => {
         setLoading(true);
         try { 
-            const response = await axios.get(`https://crud-operations-eight-delta.vercel.app/products/${id}`, { withCredentials: true });
+            const response = await axios.get(`https://crud-operations-rte5.vercel.app/products/${id}`, { withCredentials: true });
             if (response.data) {
                 const { name, price, category, company } = response.data;
                 setName(name);
@@ -75,7 +75,7 @@ const UpdateProduct = () => {
         try {
             const response = await axios.put(
                 // `https://crud-operations-udfx.onrender.com/products/${id}`,
-                 `https://crud-operations-eight-delta.vercel.app/products/${id}`,
+                 `https://crud-operations-rte5.vercel.app/products/${id}`,
                 { name, price: parseFloat(price), category, company },
                 // { withCredentials: true }
                 { headers: { withCredentials: true } }
