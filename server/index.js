@@ -441,10 +441,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    Access-Control-Allow-Origin:: "https://rakeshcrud-operations.vercel.app",
-    credentials: true,
-     Access-Control-Allow-Methods: ["GET", "POST", "PUT", "DELETE"],
-     allowedHeaders: ["Content-Type", "Authorization"], // Allow headers (especially Authorization for tokens)
+    origin: "https://rakeshcrud-operations.vercel.app", // Correct syntax for origin
+    credentials: true,  // Allow cookies in CORS requests
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"],  // Allowed headers
   })
 );
 app.options("*", cors());
