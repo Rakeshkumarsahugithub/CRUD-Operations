@@ -432,7 +432,7 @@ import Product from "./Products.js";
 import session from "express-session";
 import MongoStore from "connect-mongo";  // MongoDB store for sessions
 
-dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 5009;
 
