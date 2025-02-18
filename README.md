@@ -1,4 +1,5 @@
 # CRUD Operations API with Authentication
+ `![Signup Page](client/src/assets/Screenshot signup.png)`
 
 A **MERN application** that provides user authentication and CRUD operations on products using MongoDB.
 
