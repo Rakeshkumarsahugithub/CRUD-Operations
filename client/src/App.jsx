@@ -102,7 +102,7 @@
                 useEffect(() => {
                     const checkAuth = async () => {
                         try {
-                            const response = await axios.get("https://crud-operations-eight-delta.vercel.app/auth/check", { withCredentials: true });
+                            const response = await axios.get("https://crud-operations-rte5.vercel.app/auth/check", { withCredentials: true });
                             setIsAuthenticated(response.data.isAuthenticated);
                         } catch (error) {
                             setIsAuthenticated(false);
@@ -115,7 +115,7 @@
             
                 const handleLogout = async () => {
                     try {
-                        await axios.post("https://crud-operations-eight-delta.vercel.app/auth/logout", {}, { withCredentials: true });
+                        await axios.post("https://crud-operations-rte5.vercel.app/auth/logout", {}, { withCredentials: true });
                         setIsAuthenticated(false);
                     } catch (error) {
                         console.error("Error logging out:", error);
