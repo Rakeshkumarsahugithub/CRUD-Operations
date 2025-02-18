@@ -436,12 +436,12 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5009;
 
-// Middleware
+// Middleware   "https://rakesh-crud-operation.onrender.com",
 app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://rakesh-crud-operation.onrender.com",
+    origin: "https://rakeshcrud-operations.vercel.app",
     credentials: true,
      methods: ["GET", "POST", "PUT", "DELETE"],
   })
