@@ -1,5 +1,5 @@
 #👨‍💻👩‍💻 CRUD Operations API with Authentication 👨‍💻👩‍💻
- ![Image](https://github.com/user-attachments/assets/cd9f19ec-3c1c-4d3a-822e-2d64d4eba2db)
+<img src="https://github.com/user-attachments/assets/cd9f19ec-3c1c-4d3a-822e-2d64d4eba2db" width="500" />
 
 ### 📥 **Click Here to Explore the Project:**
 
