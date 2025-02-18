@@ -166,7 +166,7 @@ const SignUp = () => {
   }
 
   try {
-    const response = await fetch("https://crud-operations-eight-delta.vercel.app/auth/signup", {
+    const response = await fetch("https://crud-operations-rte5.vercel.app/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
