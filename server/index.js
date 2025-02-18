@@ -476,6 +476,14 @@ app.use(
   })
 );
 
+// Add CORS headers and content security headers
+app.use((req, res, next) => {
+  res.setHeader("x-content-type-options", "nosniff");  // Prevent content-type sniffing
+  res.setHeader("Access-Control-Allow-Origin", "https://rakeshcrud-operations.vercel.app"); // Frontend URL
+  res.setHeader("Access-Control-Allow-Credentials", "true"); // Allow credentials (cookies)
+  next();
+});
+
 
 // Database Connection
 connectDB().catch((err) => {
