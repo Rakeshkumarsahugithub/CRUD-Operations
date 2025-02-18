@@ -215,7 +215,7 @@ const AddProduct = () => {
         setLoading(true);
         try {
             await axios.post(
-                "https://crud-operations-eight-delta.vercel.app/products",
+                "https://crud-operations-rte5.vercel.app/products",
                 { name, price, category, company },
                 { withCredentials: true }
             );
