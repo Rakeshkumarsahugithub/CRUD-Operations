@@ -120,7 +120,7 @@ const ProductList = () => {
 
     const fetchProducts = async () => {
         try {
-            const result = await axios.get("https://crud-operations-eight-delta.vercel.app/products", { withCredentials: true });
+            const result = await axios.get("https://crud-operations-rte5.vercel.app/products", { withCredentials: true });
             setProducts(result.data);
         } catch (error) {
             console.error("Error fetching products:", error);
@@ -129,7 +129,7 @@ const ProductList = () => {
 
     const deleteProduct = async (id) => {
         try {
-            await axios.delete(`https://crud-operations-eight-delta.vercel.app/products/${id}`, { withCredentials: true });
+            await axios.delete(`https://crud-operations-rte5.vercel.app/products/${id}`, { withCredentials: true });
             fetchProducts();
         } catch (error) {
             console.error("Error deleting product:", error);
@@ -139,7 +139,7 @@ const ProductList = () => {
     const searchHandle = async () => {
         if (searchKey) {
             try {
-                const result = await axios.get(`https://crud-operations-eight-delta.vercel.app/search/${searchKey}`, { withCredentials: true });
+                const result = await axios.get(`https://crud-operations-rte5.vercel.app/search/${searchKey}`, { withCredentials: true });
                 setProducts(result.data.data);
             } catch (error) {
                 console.error("Error searching products:", error);
