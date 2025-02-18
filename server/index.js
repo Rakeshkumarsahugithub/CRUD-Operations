@@ -441,7 +441,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://rakeshcrud-operations.vercel.app",
+    origin: "rakeshcrud-operations.vercel.app",
     credentials: true,
      methods: ["GET", "POST", "PUT", "DELETE"],
      allowedHeaders: ["Content-Type", "Authorization"], // Allow headers (especially Authorization for tokens)
