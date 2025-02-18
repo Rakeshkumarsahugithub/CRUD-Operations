@@ -90,10 +90,10 @@ const Navbar = () => {
     // Function to check authentication and fetch user data
     const checkAuthentication = async () => {
         try {
-            const response = await axios.get("https://crud-operations-eight-delta.vercel.app/auth/check", { withCredentials: true });
+            const response = await axios.get("https://crud-operations-rte5.vercel.app/auth/check", { withCredentials: true });
             if (response.data.isAuthenticated) {
                 // Fetch the user data if authenticated
-                const userResponse = await axios.get("https://crud-operations-eight-delta.vercel.app/user", { withCredentials: true });
+                const userResponse = await axios.get("https://crud-operations-rte5.vercel.app/user", { withCredentials: true });
                 setIsLoggedIn(true);
                 setUsername(userResponse.data.name);  // Set the username
             } else {
@@ -113,7 +113,7 @@ const Navbar = () => {
     // Handle logout
     const logout = async () => {
         try {
-            await axios.post("https://crud-operations-eight-delta.vercel.app/auth/logout", {}, { withCredentials: true });
+            await axios.post("https://crud-operations-rte5.vercel.app/auth/logout", {}, { withCredentials: true });
             setIsLoggedIn(false);
             setDropdownVisible(false);
             navigate("/login");  // Redirect to login page
