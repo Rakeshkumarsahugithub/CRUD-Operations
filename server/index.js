@@ -444,8 +444,10 @@ app.use(
     origin: "https://rakeshcrud-operations.vercel.app",
     credentials: true,
      methods: ["GET", "POST", "PUT", "DELETE"],
+     allowedHeaders: ["Content-Type", "Authorization"], // Allow headers (especially Authorization for tokens)
   })
 );
+app.options("*", cors());
 
 // Session Store (MongoDB for persistence)
 const sessionStore = MongoStore.create({
