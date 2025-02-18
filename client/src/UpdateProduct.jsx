@@ -78,7 +78,8 @@ const UpdateProduct = () => {
                 // `https://crud-operations-udfx.onrender.com/products/${id}`,
                  `https://crud-operations-eight-delta.vercel.app/products/${id}`
                 { name, price: parseFloat(price), category, company },
-                { withCredentials: true }
+                // { withCredentials: true }
+                { headers: { withCredentials: true } }
             );
             alert(response.data?.message || "Product updated successfully!");
             navigate("/products");
