@@ -437,17 +437,18 @@ const app = express();
 const PORT = process.env.PORT || 5009;
 
 // Middleware   "https://rakesh-crud-operation.onrender.com",
+const corsOptions = {
+  origin: "https://rakeshcrud-operations.vercel.app",
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: "https://rakeshcrud-operations.vercel.app", // Correct syntax for origin
-    credentials: true,  // Allow cookies in CORS requests
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"],  // Allowed headers
-  })
-);
-app.options("*", cors());
+
 
 // Handle Cache-Control for all responses (optional)
 app.use((req, res, next) => {
